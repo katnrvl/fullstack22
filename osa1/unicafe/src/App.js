@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+const StatisticLine = (props) => <p>{props.text} {props.value}</p>
+
 const Statistics = (props) => {
   if (props.go+props.ne+props.ba === 0) {
     return (
@@ -10,12 +12,12 @@ const Statistics = (props) => {
   } 
   return (
     <div>
-    <p>good {props.go}</p>
-    <p>neutral {props.ne}</p>
-    <p>bad {props.ba}</p>
-    <p>all {props.go + props.ne + props.ba}</p>
-    <p>average {(props.go + (props.ba * -1)) / (props.go + props.ne + props.ba)}</p>
-    <p>positive {props.go / (props.go + props.ne + props.ba)} %</p>
+      <StatisticLine text="good" value={props.go} />
+      <StatisticLine text="neutral" value={props.ne} />
+      <StatisticLine text="bad" value={props.ba} />
+      <StatisticLine text="all" value={props.go + props.ne + props.ba} />
+      <StatisticLine text="average" value={(props.go + (props.ba * -1)) / (props.go + props.ne + props.ba)} />
+      <StatisticLine text="positive" value={(props.go / (props.go + props.ne + props.ba)) + " %"} />
     </div>
   )
   

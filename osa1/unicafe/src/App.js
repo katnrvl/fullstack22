@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const StatisticLine = (props) => <p>{props.text} {props.value}</p>
+// const StatisticLine = (props) => <p>{props.text} {props.value}</p>
 
 const TableLine = (props) => {
   return (
